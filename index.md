@@ -56,13 +56,13 @@ For your first milestone, describe what your project is and how you plan to buil
 # Starter Project: RGB Slider
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rhV8uBoarpk?si=_rZ5P_-N4F-b0jgd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-**Description**
+**Description:**
 The RGB Slider uses three sliders and a lightbulb. Each of the sliders sends an integer value to the lightbulb to determine the color it displays. This is powered with the USB-C plug on the circuit board. 
 
-**Challenges**
+**Challenges:**
 I intially had problems with the orientation of the lightbulb, since I had placed the negative end in the wrong pin. This meant the circuit didn't work. When I tried to desolder the lightbulb from the circuit board, I was unable to do so, and instead started over from the beginning.
 
-**Challenges**
+**Summary:**
 This project taught me how to build circuits. In addition, I was able to practice soldering, and learned how to prevent short circuits.
 
 # Schematics 
