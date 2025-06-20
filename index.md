@@ -64,12 +64,12 @@ I intially had problems with the orientation of the lightbulb, since I had place
 
 **Summary:**
 This project taught me how to build circuits. In addition, I was able to practice soldering, as well as how to check for short circuits with a multimeter and prevent or remove them.
-# Schematics 
+<!---# Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
-
+--->
 ```c++
 void setup() {
   // put your setup code here, to run once:
