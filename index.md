@@ -49,6 +49,75 @@ I plan on integrating these sensors with the larger robot, so that he can respon
 
 ![Headstone_Image](SensorsConfiguration.png)
 
+#Code for Sensor Testing 
+```c++
+const int TRIG = 9;
+const int ECHO = 6;
+const int REDPIN = 13;
+const int GREENPIN = 8;
+const int BLUEPIN = 12;
+int micAnalog = A0;
+int micDig = 2;
+
+float analogVoltage;
+int digValue;
+float duration, distance;
+
+unsigned long prevMillisLow = 0;
+unsigned long prevMillisHigh = 0;
+
+void setup() {
+  pinMode(micAnalog, INPUT);
+  pinMode(micDig, INPUT);
+  pinMode(TRIG, OUTPUT);
+  pinMode(ECHO, INPUT);
+  Serial.begin(9600);
+  digitalWrite(REDPIN, LOW);
+  digitalWrite(BLUEPIN, LOW);
+  digitalWrite(GREENPIN, LOW);
+}
+
+void loop() {
+  unsigned long currentMillis = millis();
+  digitalWrite(TRIG, LOW);
+  //replacement for delay-- (2 milliseconds)
+  if (currentMillis - prevMillisLow >= 2) {
+    prevMillisLow = currentMillis;
+    digitalWrite(TRIG, HIGH);
+  }
+  //replacement for delay-- (10 milliseconds)
+  if (currentMillis - prevMillisHigh >= 10) {
+    prevMillisHigh = currentMillis;
+    digitalWrite(TRIG, LOW);
+    duration = pulseIn(ECHO, HIGH);
+    distance = (duration*.0343)/2;
+    Serial.print("Distance: ");  
+	  Serial.println(distance); 
+
+    if (distance < 10){
+      digitalWrite(BLUEPIN, HIGH);
+      digitalWrite(REDPIN, LOW);
+    } else if (distance < 30){
+      digitalWrite(REDPIN, HIGH);
+      digitalWrite(BLUEPIN, LOW);
+    } else {
+      digitalWrite(REDPIN, LOW);
+      digitalWrite(BLUEPIN, LOW);
+    }
+  }
+
+  analogVoltage = analogRead(micAnalog) * (5.0/1023.0);
+  digValue = digitalRead(micDig);
+  Serial.print("Analog Voltage Value: ");
+  Serial.println(analogVoltage);
+  if (analogVoltage > 0.20){
+    digitalWrite(GREENPIN, HIGH);
+  } else {
+    digitalWrite(GREENPIN, LOW);
+  }
+}
+```
+
 
 # First Milestone
 
