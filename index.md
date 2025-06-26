@@ -44,9 +44,10 @@ For your second milestone, explain what you've worked on since your previous mil
 
 ![Headstone_Image](SensorsConfiguration.png)
 
+
 # First Milestone
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EciZOCs-LQc?list=PLe-u_DjFx7eui8dmPGji-0-slT8KydYv_" title="Mihika K. Milestone 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EciZOCs-LQc?si=4pNSvlZnDVBJJbzE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Description:**
 The Smartphone Cardboard Robot is built with servos, LEDs, an electrical circuit, and encased with cardboard blocks. Each of the servos allow the movement of the head, the arms, and legs. LEDs in the head simulate eyes, and will blink in different patterns to indicate different modes. The nets and movement models explain the structure of each cardboard limb as well as the body of the robot. As part of this milestone, I tested the servos and their ability to move the cardboard limbs (see schematics and diagrams below).
