@@ -61,6 +61,49 @@ Later on, I plan to complete the circuit of the robot with the LEDs, and code th
 
 ![Headstone Image](CharlieBuild.png)
 ![Headstone_Image](ServosConfiguration.png)
+# Code
+Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
+```c++
+#include <Servo.h>
+const int LL_PIN = 2;
+const int LA_PIN = 4;
+const int RL_PIN = 7;
+const int RA_PIN = 8;
+const int HEAD_PIN = 12;
+
+Servo leftLeg, leftArm, rightArm, rightLeg, head;
+
+void setup() {
+  leftLeg.attach(LL_PIN);
+  leftArm.attach(LA_PIN);
+  rightLeg.attach(RL_PIN);
+  rightArm.attach(RA_PIN);
+  head.attach(HEAD_PIN);
+  
+  reset();
+  }
+
+void loop() {
+  leftLeg.write(180);
+  delay(1000);
+  rightLeg.write(0);
+  delay(1000);
+  leftArm.write(90);
+  delay(1000);
+  rightArm.write(90);
+  head.write(180);
+  delay(1000);
+  reset();
+}
+void reset(){
+  leftLeg.write(90);
+  rightLeg.write(90);
+  leftArm.write(0);
+  rightArm.write(180); //due to configuration of motors
+  head.write(90);
+}
+
+```
 
 # Starter Project: RGB Slider
 
