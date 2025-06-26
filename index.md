@@ -31,15 +31,20 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 # Second Milestone
 
-<!---**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BYNdLccMI3A?si=dTXreLQWzvdTvkyW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+**Description:**
+For this milestone, I have implemented the sensors that will be part of the final Cardboard Robot. Originally, I had intended to make the robot walk, but due to the weight and problems with the robot's balance, I pivoted to adding sensors so the robot can respond to outside inputs. The circuit in the video demonstrates the usage of the Ultrasound Sensor, and the Microphone. The Ultrasound Sensor works by emitting a frequency of 40 kHz, and measuring the time it takes for the sound to be echoed back. Using the speed of sound, it estimates the distance it is from an object. Note that the speed of sound is about 343 m/s, meaning that this measurement is quite accurate for most moving objects (only planes and rockets can break Mach 1, and they're irrelevant for this project). The Microphone works with two outputs, digital and analog, allowing the analysis of the exact volume, as well as whether there is a significant sound or not.
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone --->
+**Status:**
+In this particular circuit, the lightbulbs turn on in response to the sensors (red turns on when the Ultrasound Sensor detects an object between 10 and 30 centimeters from it, blue turns on if it detects an object within 10 centimeters, and green turns on in response to a lound sound). Although these lightbulbs won't be in the final robot, the robot will have its own reactions to external stimuli.
+
+**Challenges:**
+This milestone required me to consider the specifications of the Ultrasound Sensor, and the Microphone, which I had never used before. The microphone particularly didn't have a lot of documentation online, so I brainstormed how I could analyze the Analog output to differentiate sounds of different levels. By adjusting its sensitivity, I set the microphone so that it could hear detect a person talking.
+
+**Plan:**
+I plan on integrating these sensors with the larger robot, so that he can respond to inputs from these sensors. In addition I plan on completing and soldering the circuits.
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Wh0m6Htr8E8?si=Qizf5hZY_ph8THIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ![Headstone_Image](SensorsConfiguration.png)
