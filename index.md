@@ -41,12 +41,14 @@ For your second milestone, explain what you've worked on since your previous mil
 - Previous challenges you faced that you overcame
 - What needs to be completed before your final milestone --->
 
+![Headstone_Image](SensorsConfiguration.png)
+
 # First Milestone
 
 <iframe width="996" height="560" src="https://www.youtube.com/embed/EciZOCs-LQc?list=PLe-u_DjFx7eui8dmPGji-0-slT8KydYv_" title="Mihika K. Milestone 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Description:**
-The Smartphone Cardboard Robot is built with servos, LEDs, an electrical circuit, and encased with cardboard blocks. Each of the servos allow the movement of the head, the arms, and legs. LEDs in the head simulate eyes, and will blink in different patterns to indicate different modes. The nets and movement models explain the structure of each cardboard limb as well as the body of the robot. As part of this milestone, I tested the servos and their ability to move the cardboard limbs (see schematic and diagram below).
+The Smartphone Cardboard Robot is built with servos, LEDs, an electrical circuit, and encased with cardboard blocks. Each of the servos allow the movement of the head, the arms, and legs. LEDs in the head simulate eyes, and will blink in different patterns to indicate different modes. The nets and movement models explain the structure of each cardboard limb as well as the body of the robot. As part of this milestone, I tested the servos and their ability to move the cardboard limbs (see schematics and diagrams below).
 
 **Status:**
 As of the first milestone, I have completely built the robot's cardboard body, as well as positioned and attached all the servos. This includes considering movement of the robot's limbs and modifying parts of the body to allow for that. For example, the are actually attached to the body with a semicircle shape at the top allowing it to rotate easily.
@@ -58,6 +60,7 @@ One challenge I'm facing is the robot's stability. While modifying the legs allo
 Later on, I plan to complete the circuit of the robot with the LEDs, and code the app on the smartphone to control the robot. In addition, I plan on adding a motion sensor and sound sensor so that the robot moves towards motion, and stops at sounds above a certain decibel value.
 
 ![Headstone Image](CharlieBuild.png)
+![Headstone_Image](ServosConfiguration.png)
 
 # Starter Project: RGB Slider
 
