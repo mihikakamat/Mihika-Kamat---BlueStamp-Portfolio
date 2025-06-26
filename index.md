@@ -61,8 +61,7 @@ Later on, I plan to complete the circuit of the robot with the LEDs, and code th
 
 ![Headstone Image](CharlieBuild.png)
 ![Headstone_Image](ServosConfiguration.png)
-# Code
-Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
+# Code for Servo Testing
 ```c++
 #include <Servo.h>
 const int LL_PIN = 2;
