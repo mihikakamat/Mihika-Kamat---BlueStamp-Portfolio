@@ -64,12 +64,12 @@ Later on, I plan to complete the circuit of the robot with the LEDs, and code th
 # Code for Servo Testing
 ```c++
 #include <Servo.h>
+
 const int LL_PIN = 2;
 const int LA_PIN = 4;
 const int RL_PIN = 7;
 const int RA_PIN = 8;
 const int HEAD_PIN = 12;
-
 Servo leftLeg, leftArm, rightArm, rightLeg, head;
 
 void setup() {
@@ -78,7 +78,6 @@ void setup() {
   rightLeg.attach(RL_PIN);
   rightArm.attach(RA_PIN);
   head.attach(HEAD_PIN);
-  
   reset();
   }
 
@@ -94,6 +93,7 @@ void loop() {
   delay(1000);
   reset();
 }
+
 void reset(){
   leftLeg.write(90);
   rightLeg.write(90);
