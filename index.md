@@ -49,7 +49,7 @@ I plan on integrating these sensors with the larger robot, so that he can respon
 
 ![Headstone_Image](SensorsConfiguration.png)
 
-#Code for Sensor Testing 
+# Code for Sensor Testing 
 ```c++
 const int TRIG = 9;
 const int ECHO = 6;
