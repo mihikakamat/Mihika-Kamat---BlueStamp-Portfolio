@@ -41,6 +41,7 @@ For your second milestone, explain what you've worked on since your previous mil
 - Previous challenges you faced that you overcame
 - What needs to be completed before your final milestone --->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Wh0m6Htr8E8?si=Qizf5hZY_ph8THIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ![Headstone_Image](SensorsConfiguration.png)
 
 # First Milestone
