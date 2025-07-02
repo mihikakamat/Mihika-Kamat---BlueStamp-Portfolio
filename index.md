@@ -47,9 +47,10 @@ I plan on integrating these sensors with the larger robot, so that he can respon
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Wh0m6Htr8E8?si=Qizf5hZY_ph8THIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+## Sensors Schematic
 ![Headstone_Image](SensorsConfiguration.png)
 
-# Code for Sensor Testing 
+## Code for Sensor Testing 
 ```c++
 const int TRIG = 9;
 const int ECHO = 6;
@@ -135,9 +136,12 @@ One challenge I'm facing is the robot's stability. While modifying the legs allo
 **Plan:**
 Later on, I plan to complete the circuit of the robot with the LEDs, and code the app on the smartphone to control the robot. In addition, I plan on adding a motion sensor and sound sensor so that the robot moves towards motion, and stops at sounds above a certain decibel value.
 
+## Robot Net
 ![Headstone Image](CharlieBuild.png)
+
+## Servos Schematic
 ![Headstone_Image](ServosConfiguration.png)
-# Code for Servo Testing
+## Code for Servo Testing
 ```c++
 #include <Servo.h>
 
