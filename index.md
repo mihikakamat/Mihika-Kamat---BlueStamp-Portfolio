@@ -135,7 +135,235 @@ One of the best parts about Github is that you can view how other people set up 
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
 - [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/) --->
+## Code for Sensors and Servos (Milestone 3)
+```c++
+#include <Servo.h>;
+#include <HCSR04.h>;
+const int LL_PIN = 2;
+const int RL_PIN = 8;
+const int RA_PIN = 7;
+const int LA_PIN = 12;
+const int HEAD_PIN = 13;
+Servo ll;
+Servo la;
+Servo rl;
+Servo ra;
+Servo head;
 
+const int TRIG = 9;
+const int ECHO = 5;
+float duration, distance;
+int sigDistance = 50;
+HCSR04 us(TRIG, ECHO);
+
+int micAnalog = A0;
+int micDig = 3;
+float analogVoltage;
+
+const int PIN_RED = 11;
+const int PIN_GREEN = 10;
+const int PIN_BLUE = 6;
+const int COLOR_INTERVAL = 2000;
+int r = 0;
+int g = 0;
+int b = 0;
+
+int modeRed = 1;
+int modeBlue = 2;
+int modeHappy = 3;
+int ledMode = 0;
+
+bool flagUSsensor = false;
+int twelveCycle = 0;
+int flag = 0;
+
+unsigned long uSsensorMillis = 0.0;
+unsigned long prevMillisColor = 0.0;
+unsigned long millisMovement = 0.0;
+
+void setup() {
+  ll.attach(LL_PIN);
+  la.attach(LA_PIN);
+  rl.attach(RL_PIN);
+  ra.attach(RA_PIN);
+  head.attach(HEAD_PIN);  
+  pinMode(micAnalog, INPUT);
+  pinMode(micDig,    INPUT);
+  pinMode(TRIG,      OUTPUT);
+  pinMode(ECHO,      INPUT);
+  pinMode(PIN_RED,   OUTPUT);
+  pinMode(PIN_GREEN, OUTPUT);
+  pinMode(PIN_BLUE,  OUTPUT);
+
+  Serial.begin(9600);
+  calibrateServos();
+}
+
+void loop() {
+  unsigned long currentMillis = millis();
+  // Ultrasound Regulation
+    distance = us.dist();
+    delay(60);
+    if (distance < sigDistance){
+      Serial.println("FIGHT");
+      flag = 1;
+      setLED(modeRed);
+      sweepArms();
+    } else {
+      setLED(3);
+      flag = 0;
+    }
+
+  //mic section
+  analogVoltage = analogRead(micAnalog) * (5.0/1023.0);
+  Serial.print("Analog Voltage Value: ");
+  Serial.println(analogVoltage);
+  //refactor for continuous array avgs?
+  if (analogVoltage > 0.22 &&  flag != 1){
+    r = 0;
+    g = 0;
+    b = 0;
+    setLED(2);
+    // if (head.read() != 45){
+    //   head.write(45);
+    // }
+    sweepArms();
+  } else {
+    if (head.read() != 90){
+      head.write(90);
+      setLED(3);
+    }
+  }
+  
+  //color section
+  if (currentMillis - prevMillisColor >= COLOR_INTERVAL){
+    prevMillisColor = currentMillis;
+    if (ledMode == 0){
+      ledMode = 3;
+    }
+    colorChange(r, g, b);
+  }
+}
+
+void calibrateServos(){
+  ll.write(90);
+  rl.write(90);
+  ra.write(0);
+  la.write(180);
+  //head.write(90);
+}
+
+void sweepArms(){
+  for (int i = 0; i < 4; i++){
+    ra.write(180);
+    la.write(0);
+    delay(500);
+    ra.write(0);
+    la.write(180);
+    delay(500);
+  }
+  calibrateServos();
+}
+
+void redMode(int red, int green, int blue){
+  if (red == 0 && green == 0 && blue == 0){
+    r = 232;
+    g = 33;
+    b = 0;
+  } else if (red == 232 && green == 33 && blue == 0){
+    r = 164;
+    g = 16;
+    b = 0;
+  } else if (red == 164 && green == 16 && blue == 0){
+    r = 171;
+    g = 255;
+    b = 0;
+  } else if (red == 171 && green == 255 && blue == 0){
+    r = 205;
+    g = 0;
+    b = 255;
+  } else if (red == 205 && green == 0 && blue == 255){
+    r = 0;
+    g = 0;
+    b = 0;
+  }
+  
+  analogWrite(PIN_RED, r);
+  analogWrite(PIN_GREEN, g);
+  analogWrite(PIN_BLUE, b);
+}
+
+void blueMode(int red, int green, int blue){
+  if (red == 0 && green == 0 && blue == 0){
+    r = 51;
+    g = 51;
+    b = 255;
+  } else if (red == 51 && green == 51 && blue == 255){
+    r = 153;
+    g = 153;
+    b = 255;
+  } else if (red = 153 && green == 153 && blue == 255){
+    r = 153;
+    g = 255;
+    b = 255;
+  } else {
+    r = 0;
+    g = 0;
+    b = 0;
+  }
+  analogWrite(PIN_RED, r);
+  analogWrite(PIN_GREEN, g);
+  analogWrite(PIN_BLUE, b);
+}
+
+void happyMode(int red, int green, int blue){
+  if (red == 0 && green == 0 && blue == 0){
+    r = 255;
+    g = 228;
+    b = 51;
+  } else if (red == 255 && green == 228 && blue == 51){
+    r = 255;
+    g = 158;
+    b = 177;
+  } else if (red == 255 && green == 158 && blue == 177){
+    r = 102;
+    g = 255;
+    b = 255;
+  } else{
+    r = 0;
+    b = 0;
+    g = 0;
+  }
+  analogWrite(PIN_RED, r);
+  analogWrite(PIN_GREEN, g);
+  analogWrite(PIN_BLUE, b);
+}
+
+void setLED(int mode){
+  ledMode = mode;
+}
+
+void colorChange(int red, int green, int blue){
+  if (ledMode == modeRed){
+    redMode(red, green, blue);
+  } else if (ledMode == modeBlue){
+    blueMode(red, green, blue);
+  } else if (ledMode == modeHappy){
+    happyMode(red, green, blue);
+  } else {
+    r = 0;
+    g = 0;
+    b = 0;
+    analogWrite(PIN_RED, r);
+    analogWrite(PIN_BLUE, b);
+    analogWrite(PIN_GREEN, g);
+  }
+}
+
+float findDistance(float duration){
+  return duration * (0.0343/2);
+}
+```
 ## Code for Servo Testing (Milestone 2)
 ```c++
 #include <Servo.h>
