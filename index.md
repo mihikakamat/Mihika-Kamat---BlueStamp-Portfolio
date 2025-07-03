@@ -9,7 +9,7 @@ You should comment out all portions of your portfolio that you have not complete
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
-| Mihika K | Los Altos High School | -check before publishing- NOT SURE | Incoming Junior
+| Mihika K | Los Altos High School | Mechanical/Electrical Engineering | Incoming Junior
 
 <!---**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.** --->
 
@@ -50,7 +50,121 @@ I plan on integrating these sensors with the larger robot, so that he can respon
 ## Sensors Schematic
 ![Headstone_Image](SensorsConfiguration.png)
 
-## Code for Sensor Testing 
+# First Milestone
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EciZOCs-LQc?si=4pNSvlZnDVBJJbzE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+**Description:**
+The Smartphone Cardboard Robot is built with servos, LEDs, an electrical circuit, and encased with cardboard blocks. Each of the servos allow the movement of the head, the arms, and legs. LEDs in the head simulate eyes, and will blink in different patterns to indicate different modes. The nets and movement models explain the structure of each cardboard limb as well as the body of the robot. As part of this milestone, I tested the servos and their ability to move the cardboard limbs (see schematics and diagrams below).
+
+**Status:**
+As of the first milestone, I have completely built the robot's cardboard body, as well as positioned and attached all the servos. This includes considering movement of the robot's limbs and modifying parts of the body to allow for that. For example, the are actually attached to the body with a semicircle shape at the top allowing it to rotate easily.
+
+**Challenges:**
+One challenge I'm facing is the robot's stability. While modifying the legs allowed the robot to actually move its legs, it dramatically reduced the robot's stability due to there only being one point of contact between the legs and the body. Another challenge is considering the placement of the electrical circuit so the robot does not topple.
+
+**Plan:**
+Later on, I plan to complete the circuit of the robot with the LEDs, and code the app on the smartphone to control the robot. In addition, I plan on adding a motion sensor and sound sensor so that the robot moves towards motion, and stops at sounds above a certain decibel value.
+
+## Robot Net
+![Headstone Image](CharlieBuild.png)
+## Servos Information
+![Headstone_Image](SensorsInformation.png);
+## Servos Schematic
+![Headstone_Image](ServosConfiguration.png)
+
+# Starter Project: RGB Slider
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rhV8uBoarpk?si=_rZ5P_-N4F-b0jgd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+**Description:**
+The RGB Slider uses three sliders and a lightbulb. Each of the sliders sends an integer value to the lightbulb to determine the color it displays. This is powered with the USB-C plug on the circuit board. Through this project I intended to practice soldering and understand circuits.
+
+**Challenges:**
+I intially had problems with the orientation of the lightbulb, since I had placed the negative end in the wrong pin. This meant the circuit didn't work. When I tried to desolder the lightbulb from the circuit board, I was unable to do so, and instead started over from the beginning.
+
+**Summary:**
+This project taught me how to build circuits. In addition, I was able to practice soldering, as well as how to check for short circuits with a multimeter and prevent or remove them.
+
+<!---
+# Schematics 
+Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
+
+# Code
+
+Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
+```c++
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  Serial.println("Hello World!");
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
+```
+
+# Bill of Materials
+Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
+Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
+
+| **Part** | **Note** | **Price** | **Link** |
+|:--:|:--:|:--:|:--:|
+| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
+
+# Other Resources/Examples
+One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
+- [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
+- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
+- [Example 3](https://arneshkumar.github.io/arneshbluestamp/) --->
+
+## Code for Servo Testing (Milestone 2)
+```c++
+#include <Servo.h>
+
+const int LL_PIN = 2;
+const int LA_PIN = 4;
+const int RL_PIN = 7;
+const int RA_PIN = 8;
+const int HEAD_PIN = 12;
+Servo leftLeg, leftArm, rightArm, rightLeg, head;
+
+void setup() {
+  leftLeg.attach(LL_PIN);
+  leftArm.attach(LA_PIN);
+  rightLeg.attach(RL_PIN);
+  rightArm.attach(RA_PIN);
+  head.attach(HEAD_PIN);
+  reset();
+  }
+
+void loop() {
+  leftLeg.write(180);
+  delay(1000);
+  rightLeg.write(0);
+  delay(1000);
+  leftArm.write(90);
+  delay(1000);
+  rightArm.write(90);
+  head.write(180);
+  delay(1000);
+  reset();
+}
+
+void reset(){
+  leftLeg.write(90);
+  rightLeg.write(90);
+  leftArm.write(0);
+  rightArm.write(180); //due to configuration of motors
+  head.write(90);
+}
+
+```
+
+## Code for Sensor Testing (Milestone 1)
 ```c++
 const int TRIG = 9;
 const int ECHO = 6;
@@ -118,116 +232,5 @@ void loop() {
   }
 }
 ```
-
-
-# First Milestone
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EciZOCs-LQc?si=4pNSvlZnDVBJJbzE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-**Description:**
-The Smartphone Cardboard Robot is built with servos, LEDs, an electrical circuit, and encased with cardboard blocks. Each of the servos allow the movement of the head, the arms, and legs. LEDs in the head simulate eyes, and will blink in different patterns to indicate different modes. The nets and movement models explain the structure of each cardboard limb as well as the body of the robot. As part of this milestone, I tested the servos and their ability to move the cardboard limbs (see schematics and diagrams below).
-
-**Status:**
-As of the first milestone, I have completely built the robot's cardboard body, as well as positioned and attached all the servos. This includes considering movement of the robot's limbs and modifying parts of the body to allow for that. For example, the are actually attached to the body with a semicircle shape at the top allowing it to rotate easily.
-
-**Challenges:**
-One challenge I'm facing is the robot's stability. While modifying the legs allowed the robot to actually move its legs, it dramatically reduced the robot's stability due to there only being one point of contact between the legs and the body. Another challenge is considering the placement of the electrical circuit so the robot does not topple.
-
-**Plan:**
-Later on, I plan to complete the circuit of the robot with the LEDs, and code the app on the smartphone to control the robot. In addition, I plan on adding a motion sensor and sound sensor so that the robot moves towards motion, and stops at sounds above a certain decibel value.
-
-## Robot Net
-![Headstone Image](CharlieBuild.png)
-
-## Servos Schematic
-![Headstone_Image](ServosConfiguration.png)
-## Code for Servo Testing
-```c++
-#include <Servo.h>
-
-const int LL_PIN = 2;
-const int LA_PIN = 4;
-const int RL_PIN = 7;
-const int RA_PIN = 8;
-const int HEAD_PIN = 12;
-Servo leftLeg, leftArm, rightArm, rightLeg, head;
-
-void setup() {
-  leftLeg.attach(LL_PIN);
-  leftArm.attach(LA_PIN);
-  rightLeg.attach(RL_PIN);
-  rightArm.attach(RA_PIN);
-  head.attach(HEAD_PIN);
-  reset();
-  }
-
-void loop() {
-  leftLeg.write(180);
-  delay(1000);
-  rightLeg.write(0);
-  delay(1000);
-  leftArm.write(90);
-  delay(1000);
-  rightArm.write(90);
-  head.write(180);
-  delay(1000);
-  reset();
-}
-
-void reset(){
-  leftLeg.write(90);
-  rightLeg.write(90);
-  leftArm.write(0);
-  rightArm.write(180); //due to configuration of motors
-  head.write(90);
-}
-
-```
-
-# Starter Project: RGB Slider
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rhV8uBoarpk?si=_rZ5P_-N4F-b0jgd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-**Description:**
-The RGB Slider uses three sliders and a lightbulb. Each of the sliders sends an integer value to the lightbulb to determine the color it displays. This is powered with the USB-C plug on the circuit board. Through this project I intended to practice soldering and understand circuits.
-
-**Challenges:**
-I intially had problems with the orientation of the lightbulb, since I had placed the negative end in the wrong pin. This meant the circuit didn't work. When I tried to desolder the lightbulb from the circuit board, I was unable to do so, and instead started over from the beginning.
-
-**Summary:**
-This project taught me how to build circuits. In addition, I was able to practice soldering, as well as how to check for short circuits with a multimeter and prevent or remove them.
-
-<!---
-# Schematics 
-Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
-
-# Code
-Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
-```c++
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
-}
-
-void loop() {
-  // put your main code here, to run repeatedly:
-
-}
-```
-# Bill of Materials
-Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
-Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
-
-| **Part** | **Note** | **Price** | **Link** |
-|:--:|:--:|:--:|:--:|
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-| Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
-
-# Other Resources/Examples
-One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
-- [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/) --->
 
 To watch the BSE tutorial on how to create a portfolio, click here.
