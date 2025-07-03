@@ -232,5 +232,3 @@ void loop() {
   }
 }
 ```
-
-To watch the BSE tutorial on how to create a portfolio, click here.
