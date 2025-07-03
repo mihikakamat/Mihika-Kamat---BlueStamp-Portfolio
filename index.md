@@ -47,6 +47,8 @@ I plan on integrating these sensors with the larger robot, so that he can respon
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Wh0m6Htr8E8?si=Qizf5hZY_ph8THIY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+## Sensors Information
+![Headstone_Image](UltrasonicSensor.png);
 ## Sensors Schematic
 ![Headstone_Image](SensorsConfiguration.png)
 
@@ -68,8 +70,6 @@ Later on, I plan to complete the circuit of the robot with the LEDs, and code th
 
 ## Robot Net
 ![Headstone Image](CharlieBuild.png)
-## Servos Information
-![Headstone_Image](SensorsInformation.png);
 ## Servos Schematic
 ![Headstone_Image](ServosConfiguration.png)
 
