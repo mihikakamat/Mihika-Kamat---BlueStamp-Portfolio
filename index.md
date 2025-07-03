@@ -41,7 +41,10 @@ The biggest challenge I faced at BSE was the problem of getting the robot to wal
 I'm proud of my work on connecting the sensors to the robot's movements. These sensors allow the robot to be an interactive scarecrow, that sensed external factors and move its limbs in response to them. 
 
 **Summary**
-During my time working on the Cardboard RObot, I learned how to construct circuits, considering which components needed a resistor, as well as how Analog and Digital (and PWM) pins worked. I also learned how to code the Arduino and use its libraries (Servo and Ultrasonic) to my advantage. In the future I hope to continue building projects like this one, involving firmware and software to solve small problems.
+During my time working on the Cardboard Robot, I learned how to construct circuits, considering which components needed a resistor, as well as how Analog and Digital (and PWM) pins worked. I also learned how to code the Arduino and use its libraries (Servo and Ultrasonic) to my advantage. In the future I hope to continue building projects like this one, involving firmware and software to solve small problems.
+
+![Headstone Image](ThirdMilestoneCircuit.png)
+*Figure 1 - Sensors and Servos Schematic*
 
 
 # Second Milestone
@@ -64,8 +67,10 @@ I plan on integrating these sensors with the larger robot, so that he can respon
 
 ## Sensors Schematic
 ![Headstone_Image](SensorsConfiguration.png)
+*Figure 2 - Sensors Schematic*
 ## Sensors Information
 ![Headstone_Image](UltrasonicSensor.png)
+*Figure 3 - Sensors Information*
 
 # First Milestone
 
@@ -85,9 +90,11 @@ Later on, I plan to complete the circuit of the robot with the LEDs, and code th
 
 ## Robot Net
 ![Headstone Image](CharlieBuild.png)
+*Figure 4 - Robot Net*
+
 ## Servos Schematic
 ![Headstone_Image](ServosConfiguration.png)
-
+*Figure 5 - Servos Schematic*
 # Starter Project: RGB Slider
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rhV8uBoarpk?si=_rZ5P_-N4F-b0jgd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
