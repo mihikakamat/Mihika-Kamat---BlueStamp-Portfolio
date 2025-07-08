@@ -226,7 +226,7 @@ void loop() {
   Serial.print("Analog Voltage Value: ");
   Serial.println(analogVoltage);
   //refactor for continuous array avgs?
-  if (analogVoltage > 0.22 &&  flag != 1){
+  if (analogVoltage > 1.50 &&  flag != 1){
     r = 0;
     g = 0;
     b = 0;
