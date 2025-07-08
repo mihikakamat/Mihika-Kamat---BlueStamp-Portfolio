@@ -27,7 +27,8 @@ For your final milestone, explain the outcome of your project. Key details to in
 - A summary of key topics you learned about
 - What you hope to learn in the future after everything you've learned at BSE --->
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0KXFxS0ANo4?si=rPcJuxnakEG7SYnT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[![Image Alt Text](Charlie.png)](<iframe width="560" height="315" src="https://www.youtube.com/embed/0KXFxS0ANo4?si=rPcJuxnakEG7SYnT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>)
 
 **Description: **
 In this milestone, I put together the cardboard body of the robot with its electrical circuit. This circuit includes 2 RGB LEDs, 5 servos controlling the motion of the limbs and head, and 2 sensors: an Ultrasonic Sensor and a Microphone. The robot has three modes, 1) when the Ultrasonic Sensor is activated, 2) when the microphone is activated, and 3) when neither sensor is activated. In the first mode, the Ultrasonic Sensor detects that an object is within 50 centimeters of the robot and responds with red flashing eyes, and sweeping arms. In the second mode, the Microphone detects a sound of significant volume and responds with blue flashing eyes and sweeping arms. In the third mode, the robot is static, with eyes shifting from purple to blue to pink to off.
