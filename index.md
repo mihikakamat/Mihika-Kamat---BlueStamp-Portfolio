@@ -501,4 +501,4 @@ Don't forget to place the link of where to buy each component inside the quotati
 
 - [Example 1](https://trashytuber.github.io/YimingJiaBlueStamp/)
 - [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
-- [Example 3](https://arneshkumar.github.io/arneshbluestamp/)-->
+- [Example 3](https://arneshkumar.github.io/arneshbluestamp/) -->
