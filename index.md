@@ -28,7 +28,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 - What you hope to learn in the future after everything you've learned at BSE --->
 
 <a href="https://youtu.be/0KXFxS0ANo4?si=6X7w6KDMrvae80OG" target="_blank">
-  <img src="ServosConfiguration.png" alt="Custom Thumbnail" width="600">
+  <img src="thirdThumbnail.png" alt="Custom Thumbnail" width="600">
 </a>
 
 **Description:**
