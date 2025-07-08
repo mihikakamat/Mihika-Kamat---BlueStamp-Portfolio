@@ -29,18 +29,18 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0KXFxS0ANo4?si=rPcJuxnakEG7SYnT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-**Description: **
+**Description:**
 In this milestone, I put together the cardboard body of the robot with its electrical circuit. This circuit includes 2 RGB LEDs, 5 servos controlling the motion of the limbs and head, and 2 sensors: an Ultrasonic Sensor and a Microphone. The robot has three modes, 1) when the Ultrasonic Sensor is activated, 2) when the microphone is activated, and 3) when neither sensor is activated. In the first mode, the Ultrasonic Sensor detects that an object is within 50 centimeters of the robot and responds with red flashing eyes, and sweeping arms. In the second mode, the Microphone detects a sound of significant volume and responds with blue flashing eyes and sweeping arms. In the third mode, the robot is static, with eyes shifting from purple to blue to pink to off.
 
-**Status: **
+**Status:**
 Each of the components are wired and soldered into the PBC board, and attached to the Arduino Uno. The sensors are activated by excessive sound and proximity, and in turn activate the servos and LED eyes.
 
-**Challenges and Triumphs: **
+**Challenges and Triumphs:**
 The biggest challenge I faced at BSE was the problem of getting the robot to walk. In order to allow the robot mobility in its legs, the robot leg was shaped with a semicircle at the top (as shown in the Robot Net). Although it did ensure movement, it also reduced the robot's stability, due there now being only 4 points of contact that balanced the robot's body. When the robot lifted its leg to walk, it furthered reduced stability. In effort to increase its stability, I added a back brace that would ideally increase stability, and take weight off the robot's legs. Although the back brace did increase stability, it also restricted the robot's ability to walk. 
 
 I'm proud of my work on connecting the sensors to the robot's movements. These sensors allow the robot to be an interactive scarecrow, that sensed external factors and move its limbs in response to them. 
 
-**Summary: **
+**Summary:**
 During my time working on the Cardboard Robot, I learned how to construct circuits, considering which components needed a resistor, as well as how Analog and Digital (and PWM) pins worked. I also learned how to code the Arduino and use its libraries (Servo and Ultrasonic) to my advantage. In the future I hope to continue building projects like this one, involving firmware and software to solve small problems.
 
 ![Headstone Image](ThirdMilestoneCircuit.png)
