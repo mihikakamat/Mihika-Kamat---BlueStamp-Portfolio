@@ -5,7 +5,7 @@ You should comment out all portions of your portfolio that you have not complete
  
 <!--- This is an HTML comment in Markdown -->
 <!--- Anything between these symbols will not render on the published site -->
-
+This robot is built entirely out of cardboard and acts as an interactive scarecrow. It responds to proximity and loud noises, by moving its limbs to scare away the intruder. The eyes indicate which mode the robot is in. Shifting disco lights indicate that neither sensor has been triggered, while red eyes and blue eyes indicate that the robot was triggered by proximity and sound respectively.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
