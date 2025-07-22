@@ -32,7 +32,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 </a>
 
 **Description:**
-In this milestone, I put together the cardboard body of the robot with its electrical circuit. This circuit includes 2 RGB LEDs, 5 servos controlling the motion of the limbs and head, and 2 sensors: an Ultrasonic Sensor and a Microphone. The robot has three modes, 1) when the Ultrasonic Sensor is activated, 2) when the microphone is activated, and 3) when neither sensor is activated. In the first mode, the Ultrasonic Sensor detects that an object is within 50 centimeters of the robot and responds with red flashing eyes, and sweeping arms. In the second mode, the Microphone detects a sound of significant volume and responds with blue flashing eyes and sweeping arms. In the third mode, the robot is static, with eyes shifting from purple to blue to pink to off.
+In this milestone, I put together the cardboard body of the robot with its electrical circuit. This circuit includes 2 RGB LEDs, 5 servos controlling the motion of the limbs and head, and 2 sensors: an Ultrasonic Sensor and a Microphone. The robot has three modes, 1) when the Ultrasonic Sensor is activated, 2) when the microphone is activated, and 3) when neither sensor is activated. In the first mode, the Ultrasonic Sensor detects that an object is within 50 centimeters of the robot and responds with red flashing eyes, and sweeping arms. In the second mode, the Microphone detects a sound of significant volume and responds with blue flashing eyes and sweeping arms (Code for Sensors and Servos (Milestone 3) shows code). In the third mode, the robot is static, with eyes shifting from purple to blue to pink to off.
 
 **Status:**
 Each of the components are wired and soldered into the PBC board, and attached to the Arduino Uno. The sensors are activated by excessive sound and proximity, and in turn activate the servos and LED eyes.
@@ -54,7 +54,7 @@ During my time working on the Cardboard Robot, I learned how to construct circui
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BYNdLccMI3A?si=dTXreLQWzvdTvkyW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Description:**
-For this milestone, I have implemented the sensors that will be part of the final Cardboard Robot. Originally, I had intended to make the robot walk, but due to the weight and problems with the robot's balance, I pivoted to adding sensors so the robot can respond to outside inputs. The circuit in the video demonstrates the usage of the Ultrasound Sensor, and the Microphone. The Ultrasound Sensor works by using the process of echolocation. The sensor emits a sound with afrequency of 40 kHz, and measures the time it takes for the sound to be reflected off an object and hit the sensor again. Using the speed of sound, it estimates the distance it is from an object. Note that the speed of sound is about 343 m/s, meaning that this measurement is quite accurate for most moving objects (only planes and rockets can break Mach 1, and they're out of scope for this project). The Microphone works with two inputs, digital and analog, allowing the analysis of the exact volume, as well as whether there is a significant sound or not.
+For this milestone, I have implemented the sensors that will be part of the final Cardboard Robot. Originally, I had intended to make the robot walk, but due to the weight and problems with the robot's balance, I pivoted to adding sensors so the robot can respond to outside inputs. The circuit in the video demonstrates the usage of the Ultrasound Sensor, and the Microphone. The Ultrasound Sensor works by using the process of echolocation. The sensor emits a sound with afrequency of 40 kHz, and measures the time it takes for the sound to be reflected off an object and hit the sensor again. Using the speed of sound, it estimates the distance it is from an object. Note that the speed of sound is about 343 m/s, meaning that this measurement is quite accurate for most moving objects (only planes and rockets can break Mach 1, and they're out of scope for this project). The Microphone works with two inputs, digital and analog, allowing the analysis of the exact volume, as well as whether there is a significant sound or not. This can be seen in the code under 
 
 **Status:**
 In this particular circuit, the lightbulbs turn on in response to the sensors (red turns on when the Ultrasound Sensor detects an object between 10 and 30 centimeters from it, blue turns on if it detects an object within 10 centimeters, and green turns on in response to a lound sound). Although these lightbulbs won't be in the final robot, the robot will have its own reactions to external stimuli.
@@ -373,50 +373,8 @@ float findDistance(float duration){
   return duration * (0.0343/2);
 }
 ```
-## Code for Servo Testing (Milestone 2)
-```c++
-#include <Servo.h>
 
-const int LL_PIN = 2;
-const int LA_PIN = 4;
-const int RL_PIN = 7;
-const int RA_PIN = 8;
-const int HEAD_PIN = 12;
-Servo leftLeg, leftArm, rightArm, rightLeg, head;
-
-void setup() {
-  leftLeg.attach(LL_PIN);
-  leftArm.attach(LA_PIN);
-  rightLeg.attach(RL_PIN);
-  rightArm.attach(RA_PIN);
-  head.attach(HEAD_PIN);
-  reset();
-  }
-
-void loop() {
-  leftLeg.write(180);
-  delay(1000);
-  rightLeg.write(0);
-  delay(1000);
-  leftArm.write(90);
-  delay(1000);
-  rightArm.write(90);
-  head.write(180);
-  delay(1000);
-  reset();
-}
-
-void reset(){
-  leftLeg.write(90);
-  rightLeg.write(90);
-  leftArm.write(0);
-  rightArm.write(180); //due to configuration of motors
-  head.write(90);
-}
-
-```
-
-## Code for Sensor Testing (Milestone 1)
+## Code for Sensor Testing (Milestone 2)
 ```c++
 const int TRIG = 9;
 const int ECHO = 6;
@@ -484,7 +442,48 @@ void loop() {
   }
 }
 ```
+## Code for Servo Testing (Milestone 1)
+```c++
+#include <Servo.h>
 
+const int LL_PIN = 2;
+const int LA_PIN = 4;
+const int RL_PIN = 7;
+const int RA_PIN = 8;
+const int HEAD_PIN = 12;
+Servo leftLeg, leftArm, rightArm, rightLeg, head;
+
+void setup() {
+  leftLeg.attach(LL_PIN);
+  leftArm.attach(LA_PIN);
+  rightLeg.attach(RL_PIN);
+  rightArm.attach(RA_PIN);
+  head.attach(HEAD_PIN);
+  reset();
+  }
+
+void loop() {
+  leftLeg.write(180);
+  delay(1000);
+  rightLeg.write(0);
+  delay(1000);
+  leftArm.write(90);
+  delay(1000);
+  rightArm.write(90);
+  head.write(180);
+  delay(1000);
+  reset();
+}
+
+void reset(){
+  leftLeg.write(90);
+  rightLeg.write(90);
+  leftArm.write(0);
+  rightArm.write(180); //due to configuration of motors
+  head.write(90);
+}
+
+```
 # Bill of Materials
 <!--Here's where you'll list the parts in your project. To add more rows, just copy and paste the example rows below.
 Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. -->
