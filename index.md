@@ -9,7 +9,7 @@ This robot is built entirely out of cardboard and acts as an interactive scarecr
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
-| Mihika K | Los Altos High School | Mechanical/Electrical Engineering | Incoming Junior
+| Mihika K | Los Altos High School | Physics, Computing, Electrical Engineering | Incoming Junior
 
 <!---**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.** --->
 
